@@ -1,0 +1,42 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 0; /* Add this */
+  margin-top: 50px;
+}
+.side-list{
+  list-style: none;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+.darks {
+  background-color: #444654;
+  color: #ffffff;
+  border-right:1px solid whitesmoke;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+}
