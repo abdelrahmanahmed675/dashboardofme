@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/abdelrahmanahmed675/dashboard.git/static/css/main.5a077d72.css",
+    "main.js": "/abdelrahmanahmed675/dashboard.git/static/js/main.06dc7bb8.js",
+    "index.html": "/abdelrahmanahmed675/dashboard.git/index.html",
+    "main.5a077d72.css.map": "/abdelrahmanahmed675/dashboard.git/static/css/main.5a077d72.css.map",
+    "main.06dc7bb8.js.map": "/abdelrahmanahmed675/dashboard.git/static/js/main.06dc7bb8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a077d72.css",
+    "static/js/main.06dc7bb8.js"
+  ]
+}
