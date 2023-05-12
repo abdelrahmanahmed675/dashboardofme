@@ -1,0 +1,79 @@
+/* Set body background to a linear gradient */
+body {
+  background: linear-gradient(to bottom, #00223e, #00223e 50%, #001b33 50%);
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Style the login container */
+.login-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Style the login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the form inputs */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+/* Style the submit button */
+.login-form button[type="submit"] {
+  background: #0077c2;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style the logo */
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Style the header text */
+.header-text {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the footer text */
+.footer-text {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    margin-top: 20px;
+  }
+  
+  .logo {
+    max-width: 150px;
+  }
+}
