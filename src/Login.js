@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 //import Token from './Token';
-import App from './App';
 //import Incorrect from './Incorrect';
 //import { Link } from 'react-router-dom';
 import './Login.css';
@@ -74,12 +73,12 @@ function Login() {
     <div className="login-container">
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
+          اسم المستخدم:
           <input type="text" value={username} onChange={handleUsernameChange} />
         </label>
         <br />
         <label>
-          Password:
+          كلمة المرور:
           <input type="password" value={password} onChange={handlePasswordChange} />
         </label>
         <br />

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home';
+import CarList from './CarList';
 
 function App() {
   const bearerToken = localStorage.getItem('Mytoken');
@@ -22,6 +23,7 @@ function App() {
           />
           <Route path="/Login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/Cars" element={ <CarList/>}/>
         </Routes>
       </Router>
     </div>
