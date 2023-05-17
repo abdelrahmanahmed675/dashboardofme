@@ -9,7 +9,7 @@ function SideBar({ isDarkMode, isHidden }) {
     localStorage.removeItem('Mytoken');
     localStorage.removeItem('loggedIn');
     // Navigate to the Login page
-    window.location.href = '/Login'; // You can also use history.push('/Login') if using useHistory hook
+    window.location.href = '/dashboardofme'; // You can also use history.push('/Login') if using useHistory hook
   };
 
   return (

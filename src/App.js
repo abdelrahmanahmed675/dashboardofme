@@ -15,14 +15,14 @@ function App() {
             path="/"
             element={
               bearerToken ? (
-                <Navigate to="/Home" replace={true} />
+                <Navigate to="/dashboardofme/Home" replace={true} />
               ) : (
-                <Navigate to="/Login" replace={true} />
+                <Navigate to="/dashboardofme" replace={true} />
               )
             }
           />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/dashboardofme" element={<Login />} />
+          <Route path="/dashboardofme/Home" element={<Home />} />
           <Route path="/Cars" element={ <CarList/>}/>
         </Routes>
       </Router>
