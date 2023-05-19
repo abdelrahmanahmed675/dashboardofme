@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faPlus } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
 import './Prompt.css';
 
-const CarList = ({ filteredCars, searchTerm, setSearchTerm }) => {
+const CarList = () => {
   const [showModal, setShowModal] = useState(false);
   const [carName, setCarName] = useState('');
   const [carModel, setCarModel] = useState('');
@@ -17,13 +17,18 @@ const CarList = ({ filteredCars, searchTerm, setSearchTerm }) => {
   const [expireDate, setExpireDate] = useState('');
   const [checkingDate, setCheckingDate] = useState('');
   const [ownerName, setOwnerName] = useState('');
+   const [searchTerm, setSearchTerm] = useState('');
+   const [cars, setCars] = useState([]);
+ 
+
+
 
   const handleCreate = async (event) => {
     event.preventDefault();
 
     try {
       // Perform your API call here with the entered car details
-      const response = await fetch('http://transportation.somee.com/api/Car/CreateCar', {
+      const response = await fetch(`http://transportation.somee.com/api/Car/CreateCar?Name=${carName}&Model=${carModel}&Color=${carColor}&MoterNumber=${motorNumber}&FramNumber=${frameNumber}&PlateNumber=${plateNumber}&Kind=${carKind}&RenewalDate=${renewalDate}&ExpireDate=${expireDate}&CheckingDate=${checkingDate}&OwnerName=${ownerName}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,6 +74,24 @@ const CarList = ({ filteredCars, searchTerm, setSearchTerm }) => {
     }
   };
 
+
+   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resp = await fetch('http://transportation.somee.com/api/Car/GetAllCars');
+        const data = await resp.json();
+        setCars(data.result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const filteredCars = cars.filter(car =>{
+      return car.name.toLowerCase().includes(searchTerm.toLowerCase());
+    })
+
   return (
     <div className="content">
       <div className="main">
@@ -87,8 +110,9 @@ const CarList = ({ filteredCars, searchTerm, setSearchTerm }) => {
             {filteredCars.map((car) => (
 
               <div className="employee-card" key={car.id}>
-                
+                <div className="circle">
                   <FontAwesomeIcon icon={faCar} className="employee-avatar" />
+                  </div>
                
                 <div className="employee-details">
                   <h3>{car.name}</h3>

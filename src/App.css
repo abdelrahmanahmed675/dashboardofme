@@ -1,4 +1,22 @@
 /* App.css */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 body{
   direction: rtl;
 }
@@ -16,23 +34,24 @@ body{
 
 .sidebar {
   position: fixed;
-  top: 50px; /* Adjust the top value to accommodate the height of the navigation bar */
+  top: 44px; 
   bottom: 0;
   right: 0;
-  width: 200px;
-  background-color: #2a2b32;
-  color:lightgray;
-  padding: 1rem;
+  margin-top:0;
+  /*width: 200px;
+  background: #2a2b32;
+  color:black;
+ /* padding: 1rem;
   overflow-y: auto;
   transition: transform 0.3s ease-in-out;
   z-index: 2;
-  margin-top:0;
-}
+  
+}*/}
 
-.sidebar.hidden {
-  /*transform: translateX(50px);*/
+/*.sidebar.hidden {
+  /*transform: translateX(50px);
   width:50px;
-}
+}*/
 
 /*.sidebar.hidden .icon {
   display: none;
@@ -90,8 +109,21 @@ body{
 
 .main {
   margin-left: 0;
-   margin-right:280px;
+   margin-right:250px;
 }
+
+.mainHide{
+ margin-left:0;
+  margin-right:80px;
+}
+
+.menu-item-label {
+  margin-left: 10px;
+color:lightgray;
+   /* Adjust the desired spacing */
+}
+
+
 .search-container .search {
   margin-bottom: 20px; /* Adjust the value as needed */
 }
@@ -155,6 +187,7 @@ h2 {
 .employees-list {
   display: grid;
   justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
@@ -163,18 +196,26 @@ h2 {
   display: flex;
    justify-content: center;
    align-items: center;
+   flex-flow: column;
   background-color: #ffffff;
-  border-radius: 100px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .employee-avatar {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 100%;
   object-fit: cover;
-  margin-left: 20px;
 }
 
 .employee-details {

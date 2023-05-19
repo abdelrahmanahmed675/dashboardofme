@@ -47,7 +47,7 @@ function Login() {
         //setIncorrect(false);
          localStorage.setItem("Mytoken", response1.token);
         localStorage.setItem('loggedIn', 'true');
-         window.location.href = '/dashboardofme/Home';
+         window.location.href = '/dashboardofme/Car';
       } else if (response.status === 400) {
         setLoggedIn(false);
         //setIncorrect(true);
