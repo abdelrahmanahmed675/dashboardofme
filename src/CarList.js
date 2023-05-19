@@ -4,7 +4,7 @@ import { faCar, faPlus } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
 import './Prompt.css';
 
-const CarList = () => {
+const CarList = ({isDarkMode}) => {
   const [showModal, setShowModal] = useState(false);
   const [carName, setCarName] = useState('');
   const [carModel, setCarModel] = useState('');
@@ -19,6 +19,11 @@ const CarList = () => {
   const [ownerName, setOwnerName] = useState('');
    const [searchTerm, setSearchTerm] = useState('');
    const [cars, setCars] = useState([]);
+ 
+  
+ 
+
+  
  
 
 
@@ -74,6 +79,14 @@ const CarList = () => {
     }
   };
 
+  const handleCancel = () => {
+    setShowModal(false);
+    // Reset the input fields
+    setCarName('');
+    setCarModel('');
+    // Reset other fields...
+  };
+
 
    useEffect(() => {
     const fetchData = async () => {
@@ -92,21 +105,29 @@ const CarList = () => {
       return car.name.toLowerCase().includes(searchTerm.toLowerCase());
     })
 
+   useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showModal]);
+
   return (
-    <div className="content">
+    <div className={`content ${isDarkMode ? 'dark' : ''}`}>
       <div className="main">
         <h2>كل السيارات</h2>
         <div className="search-container">
           <div className="create-icon">
             <button className="add-car-button" onClick={() => setShowModal(true)}>
-              <FontAwesomeIcon icon={faPlus} />
+              <FontAwesomeIcon icon={faPlus}  style={{color:'white'}}/>
               Add Car
             </button>
           </div>
           <div className="search">
             <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </div>
-          <div className="employees-list">
+          <div className={`employees-list ${isDarkMode ? 'dark' : ''}`}>
             {filteredCars.map((car) => (
 
               <div className="employee-card" key={car.id}>
@@ -167,6 +188,7 @@ const CarList = () => {
           <input type="text" id="ownerName" value={ownerName} onChange={(e) => setOwnerName(e.target.value)} />
 
           <button type="submit">Create Car</button>
+           <button type="button" onClick={handleCancel}>Cancel</button>
         </form>
       </div>
     </div>

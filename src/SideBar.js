@@ -37,7 +37,11 @@ function SideBar({ isDarkMode, isHidden }) {
         if (level === 0)
           return {
             color: disabled ? '#f5d9ff' : '#d359ff',
-            backgroundColor: active ? '#eecef9' : undefined,
+            backgroundColor: active ? '#000' : undefined,
+            "&:hover":{
+              backgroundColor:'transparent',
+              color:'inherit'
+            }
           };
       },
     }}
@@ -55,7 +59,7 @@ function SideBar({ isDarkMode, isHidden }) {
             </div>
           </MenuItem>
           <MenuItem component={<Link to="/dashboardofme/followers" />}>
-           <div style={{display:'flex',justifyContent:'space-between'}}>
+           <div style={{display:'flex',justifyContent:'space-between'}} className='item'>
             <FontAwesomeIcon icon={faArrowCircleUp} className="icon" />
             <span className="menu-item-label">Followers</span>
             </div>

@@ -1,22 +1,22 @@
 /* App.css */
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   width: 10px;
-}
+}*/
 
 /* Track */
-::-webkit-scrollbar-track {
+/*::-webkit-scrollbar-track {
   background: #e0e0e0;
-}
+}*/
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/*::-webkit-scrollbar-thumb {
   background: #888;
-}
+}*/
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/*::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+}*/
 body{
   direction: rtl;
 }
@@ -34,7 +34,7 @@ body{
 
 .sidebar {
   position: fixed;
-  top: 44px; 
+  top: 53px; 
   bottom: 0;
   right: 0;
   margin-top:0;
@@ -92,13 +92,20 @@ body{
   transition: color 0.3s ease-in-out;
 }
 
-.sidebar ul li a:hover {
-  color: #007bff;
+.sidebar ul li :hover {
+  color:white;
 }
 
-.sidebar ul li .icon {
+.sidebar ul li  .icon {
   margin-right: 10px;
+  color:gray;
 }
+
+.sidebar ul li  .icon:hover {
+  
+  color:white;
+}
+
 
 
 .content {
@@ -108,6 +115,7 @@ body{
 }
 
 .main {
+  margin-top:50px;
   margin-left: 0;
    margin-right:250px;
 }
@@ -151,7 +159,7 @@ color:lightgray;
 
 .create-icon svg {
   font-size: 24px;
-  color: #007bff;
+  color: #000;
   cursor: pointer;
 }
 .add-car-button {
@@ -169,14 +177,14 @@ color:lightgray;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   position: fixed;
-  top: 50px; /* Adjust the distance from the bottom as needed */
+  top: 70px; /* Adjust the distance from the bottom as needed */
   left: 20px; /* Adjust the distance from the left as needed */
   z-index: 2;
 }
 
-.add-car-button:hover {
+/*.add-car-button:hover {
   background-color: #0056b3;
-}
+}*/
 
 h2 {
   font-size: 24px;
@@ -241,15 +249,21 @@ h2 {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1;
-   background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%); 
+   background: linear-gradient(to right,#00c5fb 0%,#0253cc 100%);
+   font-size:1.5rem;
 }
 
 .darks {
   background:#444654;
   color:white;
+}
+
+.dark {
+  background:#444654;
+ 
 }
 
 
@@ -278,9 +292,9 @@ h2 {
   cursor: pointer;
 }
 
-.navbar svg:hover {
-  color: #007bff;
-}
+/*.navbar svg:hover {
+  color: #000;
+}*/
 
 @media (max-width: 768px) {
   .container {

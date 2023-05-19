@@ -1,10 +1,17 @@
-body {
+
+
+
+
+.gradient {
+  width:100%;
+  min-height: 100vh;
+  margin:0;
   background: linear-gradient(to bottom, #1e90ff, #00bfff);
 }
 
 
 
-.login-container {
+.loginContainer {
   display:flex;
   position: relative;
   top:200px;
@@ -17,13 +24,13 @@ body {
   margin: 0 auto;
 }
 
-.login-container label {
+ .label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.login-container input {
+ .input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -32,7 +39,7 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-container button {
+.button {
   width: 100%;
   padding: 10px;
   background-color: #4caf50;
@@ -42,7 +49,7 @@ body {
   cursor: pointer;
 }
 
-.login-container button:hover {
+ .button:hover {
   background-color: #45a049;
 }
 

@@ -33,7 +33,7 @@ function Car() {
         {/*<Playgrond />*/}
         </div>
         
-       <CarList />
+       <CarList isDarkMode={isDarkMode}/>
 
        </div>
     </div>

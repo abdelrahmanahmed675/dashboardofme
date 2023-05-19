@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import Token from './Token';
 //import Incorrect from './Incorrect';
 //import { Link } from 'react-router-dom';
-import './Login.css';
+import styles from './Login.module.css'; 
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -11,6 +11,8 @@ function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
   //const [incorrect, setIncorrect] = useState(false);
   //const [token, setToken] = useState('');
+
+   
   
 
   const handleUsernameChange = (event) => {
@@ -70,20 +72,29 @@ function Login() {
   }*/
 
   return (
-    <div className="login-container">
+
+    <div className={styles.gradient}>
+    <div className={styles.loginContainer}>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label  className={styles.label}>
           اسم المستخدم:
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </label>
+          <input type="text" value={username}
+           onChange={handleUsernameChange} 
+             className={styles.input}
+           />
+        </label >
         <br />
-        <label>
+        <label  className={styles.label}>
           كلمة المرور:
-          <input type="password" value={password} onChange={handlePasswordChange} />
+          <input type="password" value={password}
+            className={styles.input}
+           onChange={handlePasswordChange} 
+           />
         </label>
         <br />
-        <button type="submit">Log In</button>
+        <button type="submit"  className={styles.button}>Log In</button>
       </form>
+    </div>
     </div>
   );
 }
