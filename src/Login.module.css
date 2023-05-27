@@ -1,6 +1,7 @@
 .gradient {
   min-width: 100vw;
   min-height: 100vh;
+margin:0;
   background-color: #f7f7f7;
   display: flex;
   justify-content: center;

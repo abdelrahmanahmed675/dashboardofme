@@ -101,9 +101,11 @@ const CarList = ({isDarkMode}) => {
 
     fetchData();
   }, []);
-  const filteredCars = cars.filter(car =>{
-      return car.name.toLowerCase().includes(searchTerm.toLowerCase());
-    })
+  const filteredCars = cars.filter(car =>
+  Object.values(car).some(value =>
+    String(value).toLowerCase().includes(searchTerm.toLowerCase())
+  )
+);
 
    useEffect(() => {
     if (showModal) {
