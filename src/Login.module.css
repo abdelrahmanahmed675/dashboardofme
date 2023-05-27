@@ -1,60 +1,61 @@
-
-
-
-
 .gradient {
-  width:100%;
+  min-width: 100vw;
   min-height: 100vh;
-  margin:0;
-  background: linear-gradient(to bottom, #1e90ff, #00bfff);
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items to the top */
+  flex-direction: column; /* Arrange items in a column */
 }
-
-
 
 .loginContainer {
-  display:flex;
-  position: relative;
-  top:200px;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-   background: linear-gradient(to bottom, #f2f2f2, #d9d9d9); /* Define the linear gradient background */
-  padding: 20px;
+  background: white;
+  padding: 50px;
   border-radius: 10px;
+  margin: 20px auto; /* Add margin to create space between logo and login */
   max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
- .label {
+.label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
- .input {
+.input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .button {
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background: linear-gradient(to right, #ff9b44 0%, #fc6075 100%);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
- .button:hover {
+.button:hover {
   background-color: #45a049;
 }
 
-@media (max-width: 480px) {
-  .login-container {
-    max-width: 100%; /* Adjust the width for smaller screens */
+@media (max-width: 768px) {
+  .gradient {
+    min-width: 100%;
+  }
+  .loginContainer {
+    margin: 10px;
+    max-width:200px;
   }
 }

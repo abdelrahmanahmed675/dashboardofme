@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 //import Token from './Token';
 //import Incorrect from './Incorrect';
 //import { Link } from 'react-router-dom';
-import styles from './Login.module.css'; 
+import styles from './Login.module.css';
+import Logo from './assets/logo2.png' ;
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -74,6 +75,9 @@ function Login() {
   return (
 
     <div className={styles.gradient}>
+    <div className={styles.Logo}>
+    <img src={Logo} alt='logo'/>
+    </div>
     <div className={styles.loginContainer}>
       <form onSubmit={handleSubmit}>
         <label  className={styles.label}>
