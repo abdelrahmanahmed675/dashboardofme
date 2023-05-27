@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
-//import Token from './Token';
-//import Incorrect from './Incorrect';
-//import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
-import Logo from './assets/logo2.png' ;
+import Logo from './assets/logo2.png';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const [role, setRole] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
-  //const [incorrect, setIncorrect] = useState(false);
-  //const [token, setToken] = useState('');
-
-   
-  
+  const [incorrect, setIncorrect] = useState(false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -23,10 +15,6 @@ function Login() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
-  /*const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };*/
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -40,20 +28,15 @@ function Login() {
         body: JSON.stringify({ username, password}),
       });
 
-      const response1 = await response.json();
-
-
-
-      if (response.status === 200) {
-        //setToken(data.token);
-        //setLoggedIn(true);
-        //setIncorrect(false);
-         localStorage.setItem("Mytoken", response1.token);
-        localStorage.setItem('loggedIn', 'true');
-         window.location.href = '/dashboardofme/Car';
-      } else if (response.status === 400) {
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('Mytoken', data.token);
+        setLoggedIn(true);
+        setIncorrect(false);
+        window.location.href = '/dashboardofme/Car';
+      } else {
         setLoggedIn(false);
-        //setIncorrect(true);
+        setIncorrect(true);
       }
     } catch (error) {
       console.error(error);
@@ -61,44 +44,52 @@ function Login() {
   };
 
   useEffect(() => {
-    const storedLoggedIn = localStorage.getItem('loggedIn'); // Check if the login state is stored
-
+    const storedLoggedIn = localStorage.getItem('loggedIn');
     if (storedLoggedIn === 'true') {
       setLoggedIn(true);
     }
   }, []);
 
-  /*if (loggedIn) {
-    return <App />;
-  }*/
+  if (loggedIn) {
+    // Redirect to the dashboard or any authorized page
+    window.location.href = '/dashboardofme/Car';
+    // You may want to replace the above line with a React Router redirect
+    // component to handle navigation within your application.
+    return null;
+  }
 
   return (
-
     <div className={styles.gradient}>
-    <div className={styles.Logo}>
-    <img src={Logo} alt='logo'/>
-    </div>
-    <div className={styles.loginContainer}>
-      <form onSubmit={handleSubmit}>
-        <label  className={styles.label}>
-          اسم المستخدم:
-          <input type="text" value={username}
-           onChange={handleUsernameChange} 
-             className={styles.input}
-           />
-        </label >
-        <br />
-        <label  className={styles.label}>
-          كلمة المرور:
-          <input type="password" value={password}
-            className={styles.input}
-           onChange={handlePasswordChange} 
-           />
-        </label>
-        <br />
-        <button type="submit"  className={styles.button}>Log In</button>
-      </form>
-    </div>
+      <div className={styles.Logo}>
+        <img src={Logo} alt='logo' />
+      </div>
+      <div className={styles.loginContainer}>
+        <form onSubmit={handleSubmit}>
+          <label className={styles.label}>
+            اسم المستخدم:
+            <input
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+              className={styles.input}
+            />
+          </label>
+          <br />
+          <label className={styles.label}>
+            كلمة المرور:
+            <input
+              type="password"
+              value={password}
+              className={styles.input}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <br />
+          <button type="submit" className={styles.button}>Log In</button>
+        
+        {incorrect && <div className={styles.error}>Incorrect username or password.</div>}
+        </form>
+      </div>
     </div>
   );
 }

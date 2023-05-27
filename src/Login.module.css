@@ -8,6 +8,11 @@ margin:0;
   align-items: center; /* Align items to the top */
   flex-direction: column; /* Arrange items in a column */
 }
+.error{
+ color: red;
+  font-size: 2rem;
+  margin-top: 10px
+}
 
 .loginContainer {
   display: flex;
