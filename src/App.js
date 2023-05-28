@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './Login';
 //import Home from './Home';
 import Car from './Home';
+import EditCar from './Car';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/dashboardofme" element={<Login />} />
           {/*<Route path="/dashboardofme/Home" element={<Home />} />*/}
           <Route path="/dashboardofme/Car" element={ <Car/>}/>
+          <Route path="/dashboardofme/edit-car/:id" element={ <EditCar/>}/>
         </Routes>
       </Router>
     </div>

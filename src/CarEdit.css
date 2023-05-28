@@ -1,0 +1,63 @@
+.contInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff0084, #3300ff);
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.car-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding:10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Translucent white background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+}
+
+.col1,
+.col2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-info div {
+  margin-bottom: 10px;
+}
+
+.car-info label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  font-size: 18px; /* Increase the font size as desired */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 14px 28px; /* Increase the padding for a bigger button */
+  font-size: 20px; /* Increase the font size as desired */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

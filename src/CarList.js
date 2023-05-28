@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faPlus } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
+import { Link } from 'react-router-dom';
+import EditCar from './Car';
 import './Prompt.css';
 
 const CarList = ({isDarkMode}) => {
@@ -134,7 +136,9 @@ const CarList = ({isDarkMode}) => {
 
               <div className="employee-card" key={car.id}>
                 <div className="circle">
-                  <FontAwesomeIcon icon={faCar} className="employee-avatar" />
+                   <Link to={`/dashboardofme/edit-car/${car.id}`}>
+                    <FontAwesomeIcon icon={faCar} className="employee-avatar" />
+                  </Link>
                   </div>
                
                 <div className="employee-details">
